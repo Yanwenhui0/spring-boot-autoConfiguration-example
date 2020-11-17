@@ -1,32 +1,69 @@
 {
   "properties": [
     {
-      "name": "spring.zookeeper.host",
+      "name": "spring.zookeeper.retry-policy",
       "type": "java.lang.String",
-      "description": "Zookeeper host."
-    },
-    {
-      "name": "spring.zookeeper.retryPolicy",
-      "type": "java.lang.String",
-      "description": "exponential-backoff-retry:重试指定的次数, 且每一次重试之间停顿的时间逐渐增加 retry-n-times:指定最大重试次数的重试策略 retry-one-time:只重试一次 retry-forever:永远重试 retry-until-elapsed:一直重试直到达到规定的时间",
+      "values": [
+        {
+          "value": "exponential-backoff-retry",
+          "description": "重试指定的次数, 且每一次重试之间停顿的时间逐渐增加."
+        },
+        {
+          "value": "retry-n-times",
+          "description": "指定最大重试次数的重试策略."
+        },
+        {
+          "value": "retry-one-time",
+          "description": "只重试一次."
+        },
+        {
+          "value": "retry-forever",
+          "description": "永远重试."
+        },
+        {
+          "value": "retry-until-elapsed",
+          "description": "一直重试直到达到规定的时间."
+        }
+      ],
+      "providers": [
+        {
+          "name": "any"
+        }
+      ],
+      "description": "Zookeeper retryPolicy.",
       "defaultValue": "retry-until-elapsed"
-    },
+    }
+  ],
+  "hints": [
     {
-      "name": "spring.zookeeper.sessionTimeOut",
-      "type": "java.lang.Integer",
-      "description": "Zookeeper sessionTimeOut.",
-      "defaultValue": 5000
-    },
-    {
-      "name": "spring.zookeeper.connectTimeOut",
-      "type": "java.lang.Integer",
-      "description": "Zookeeper connectTimeOut.",
-      "defaultValue": 5000
-    },
-    {
-      "name": "spring.zookeeper.nameSpace",
-      "type": "java.lang.String",
-      "description": "Zookeeper nameSpace."
+      "name": "spring.zookeeper.retry-policy",
+      "values": [
+        {
+          "value": "exponential-backoff-retry",
+          "description": "重试指定的次数, 且每一次重试之间停顿的时间逐渐增加."
+        },
+        {
+          "value": "retry-n-times",
+          "description": "指定最大重试次数的重试策略."
+        },
+        {
+          "value": "retry-one-time",
+          "description": "只重试一次."
+        },
+        {
+          "value": "retry-forever",
+          "description": "永远重试."
+        },
+        {
+          "value": "retry-until-elapsed",
+          "description": "一直重试直到达到规定的时间."
+        }
+      ],
+      "providers": [
+        {
+          "name": "any"
+        }
+      ]
     }
   ]
 }
